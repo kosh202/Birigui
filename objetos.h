@@ -1,17 +1,55 @@
-enum IDS
-{
+#pragma once
+
+enum IDS {
 	JOGADOR,
 	OBSTACULOS
 };
 
-struct Jogador
-{
-	int ID;
-	int x;
-	int y;
-	int velocidade;
-	int boundx;
-	int boundy;
+enum STATUS {
+	MORTO,
+	VIVO
+};
 
-	int vidas;
+enum POSICOES {
+	ESQUERDA,
+	MEIO,
+	DIREITA
+};
+
+enum OBSTACULOS {
+	CONE,
+	CORRIMAO
+};
+
+struct Jogador {
+	int ID;
+
+	bool status;
+
+	int posicao;
+
+	int x1;
+	int x2;
+	int y1;
+	int y2;
+};
+
+struct Obstaculo {
+	int ID;
+
+	bool status;
+
+	int tipo;
+
+	int posicao;
+
+	float x1;
+	float x2;
+	float y1;
+	float y2;
+
+	float edgeRate;
+	float edgeRate2;
+
+	float velocidade;
 };
